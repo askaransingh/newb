@@ -49,7 +49,8 @@ app.use(cors({
   origin: [
     "http://localhost:3000",
     "https://www.fairdealtruckparts.ca",
-    "https://fairdealtruckparts.ca"
+    "https://fairdealtruckparts.ca",
+    process.env.FRONTEND_URL
   ],
   credentials: true
 }));
@@ -57,6 +58,8 @@ app.use(cors({
 app.use(cors({
   origin: "*"
 }));
+
+
 app.use(express.json());
 
 connectToDB();
