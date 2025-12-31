@@ -46,8 +46,16 @@ const app = express();
 const PORT = 6003;
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: [
+    "http://localhost:3000",
+    "https://www.fairdealtruckparts.ca",
+    "https://fairdealtruckparts.ca"
+  ],
   credentials: true
+}));
+
+app.use(cors({
+  origin: "*"
 }));
 app.use(express.json());
 
